@@ -28,10 +28,10 @@ export default function Navbar(props) {
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
-                <a>Evènements</a>
+                <Link href="/event" className="text-neutral">Evènements</Link>
               </li>
               <li>
-                <a>Emploi</a>
+                <Link href="/joboffer" className="text-neutral">Emploi</Link>
               </li>
             </ul>
           </div>
@@ -49,7 +49,7 @@ export default function Navbar(props) {
           </Link>
         </div>
         <div className="navbar-end">
-          <Link href="#" className="btn btn-ghost btn-circle mx-5">
+          <Link href="/consumer" className="btn btn-ghost btn-circle mx-5">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="40"

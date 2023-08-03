@@ -7,6 +7,7 @@ export default function CardCompany(props) {
         <Image
           src="/caribean-tribe.png"
           alt="illustration caribéenne"
+          className="w-full"
           width={500}
           height={50}
           style={{objectFit: "cover"}}

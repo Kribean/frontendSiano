@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function HomeBaner()
 {
@@ -13,8 +14,8 @@ export default function HomeBaner()
     <div>
       <h1 className="text-5xl font-bold">Bienvenue sur Siano!</h1>
       <p className="py-6">Siano est une plateforme innovante dédiée à la croissance des entreprises locales et à l'épanouissement économique des Antilles. En mobilisant activement la population antillaise, nous encourageons la croissance des entreprises locales, créant ainsi de nouvelles opportunités d'emploi et contribuant au développement économique de notre région.</p>
-      <button className="btn btn-primary m-2">Entreprise</button>
-      <button className="btn btn-primary m-2">Client</button>
+      <Link href="/logorsign" className="btn btn-primary m-2">Entreprise</Link>
+      <Link href="/consumer" className="btn btn-primary m-2">Client</Link>
     </div>
   </div>
 </div>

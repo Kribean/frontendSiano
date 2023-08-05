@@ -6,8 +6,13 @@ import Footer from "@/components/Footer/Footer";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between w-full">
-      <Navbar />
+    <main className="relative flex min-h-screen flex-col items-center justify-between w-full">
+      <div className="w-full hidden lg:block">
+        <Navbar />
+      </div>
+      <div className="w-full block lg:hidden fixed bg-light z-[100] bottom-0">
+        <Navbar />
+      </div>
       <div className="alert alert-info">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -22,9 +27,11 @@ export default function Home() {
             d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
           ></path>
         </svg>
-        <span>Lancement de l'application pour la mobilisation citoyenne caribéenne.</span>
+        <span>
+          Lancement de l'application pour la mobilisation citoyenne caribéenne.
+        </span>
       </div>
-      <HomeBaner/>
+      <HomeBaner />
 
       <div className="flex flex-col w-full justify-start">
         <h2 className="font-bold text-2xl ">
@@ -46,11 +53,10 @@ export default function Home() {
       <div className="flex flex-col w-full justify-start">
         <h2 className="font-bold text-2xl ">Siano en quelques chiffres</h2>
         <div className="flex">
-<StatComponent/>
+          <StatComponent />
         </div>
       </div>
-      <Footer/>
-      
+      <Footer />
     </main>
   );
 }

@@ -1,7 +1,7 @@
 export default function Footer (){
 
     return(
-        <footer className="footer flex flex-col p-10 bg-neutral text-neutral-content">
+        <footer className="footer flex flex-col pb-[100px] lg:pb-10 bg-neutral text-neutral-content">
 <div className="flex flex-row">
     <a className="link link-hover">Charte</a>
     <a className="link link-hover">RGPD</a>

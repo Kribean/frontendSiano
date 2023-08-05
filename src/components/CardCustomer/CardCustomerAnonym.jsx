@@ -1,6 +1,8 @@
 import Image from "next/image";
 
 export default function CardCustomerAnonym(props) {
+
+
   return (
     <div className="card w-full lg:w-96 h-[250px] bg-primary text-primary-content shadow-xl flex-row">
       <div className="flex flex-col p-2 justify-start">

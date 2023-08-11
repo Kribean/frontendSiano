@@ -3,36 +3,51 @@ import Footer from "@/components/Footer/Footer";
 import CardEvent from "@/components/CardEvent/CardEvent";
 
 export default function Event() {
-  const data = [
+  const dataCalendar = [
     {
-      title: "Rassemblement pour la découverte de la faune",
-      description:
-        "l'entreprise Kfé vous présentera les merveilles de la forêt vatable",
-      date: "10 Octobre 2023",
+      date: "5/12/2023",
+      title: "Foire aux légume",
+      description: "vente de fruit et légume retrouver mon stand",
     },
     {
-      title: "Rassemblement pour la découverte de la faune",
-      description:
-        "l'entreprise Kfé vous présentera les merveilles de la forêt vatable",
-      date: "10 Novembre 2023",
+      date: "12/08/2023",
+      title: "Journée de l'énergie",
+      description: "découvrer les énergie solaire et chauffe eau",
     },
     {
-      title: "Rassemblement pour la découverte de la faune",
-      description:
-        "l'entreprise Kfé vous présentera les merveilles de la forêt vatable",
-      date: "10 Décembre 2023",
+      date: "30/11/2023",
+      title: "Journée sportive",
+      description: "venez découvrir notre randonnée ",
     },
     {
-      title: "Rassemblement pour la découverte de la faune",
-      description:
-        "l'entreprise Kfé vous présentera les merveilles de la forêt vatable",
-      date: "10 Octobre 2023",
+      date: "5/12/2023",
+      title: "Foire aux légume",
+      description: "vente de fruit et légume retrouver mon stand",
     },
     {
-      title: "Rassemblement pour la découverte de la faune",
-      description:
-        "l'entreprise Kfé vous présentera les merveilles de la forêt vatable",
-      date: "10 Octobre 2023",
+      date: "12/08/2023",
+      title: "Journée de l'énergie",
+      description: "découvrer les énergie solaire et chauffe eau",
+    },
+    {
+      date: "30/11/2023",
+      title: "Journée sportive",
+      description: "venez découvrir notre randonnée ",
+    },
+    {
+      date: "5/12/2023",
+      title: "Foire aux légume",
+      description: "vente de fruit et légume retrouver mon stand",
+    },
+    {
+      date: "12/08/2023",
+      title: "Journée de l'énergie",
+      description: "découvrer les énergie solaire et chauffe eau",
+    },
+    {
+      date: "30/11/2023",
+      title: "Journée sportive",
+      description: "venez découvrir notre randonnée ",
     },
   ];
   return (
@@ -44,12 +59,14 @@ export default function Event() {
         <Navbar />
       </div>
       <div className=" flex flex-wrap gap-4 min-h-screen bg-base-200">
-        {data.map((element) => {
+        {dataCalendar.map((element,index) => {
           return (
             <CardEvent
+              date={element.date}
               title={element.title}
               description={element.description}
-              date={element.date}
+              isAdmin={false}
+              key={index}
             />
           );
         })}

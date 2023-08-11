@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar/Navbar";
 import Navbar2 from "@/components/Navbar2/Navbar2";
 import FeedbackCompany from "@/components/FeedbackCompany/FeedbackCompany";
 import Footer from "@/components/Footer/Footer";
-
+import Link from "next/link";
 export default function CompanySession() {
   return (
     <main className="relative flex min-h-screen flex-col items-center justify-between w-full">
@@ -17,15 +17,17 @@ export default function CompanySession() {
         <div className="flex flex-col lg:flex-row">
           <div className="flex flex-col">
             <div className="card w-[90%] lg:w-96 bg-base-100 shadow-xl m-5 bg-primary">
-              <button className="card-body w-full">
+              <Link href={"/company-calendar"} className="card-body w-full">
+<div className="flex flex-row">
+<div className="badge badge-accent h-[80px] text-center text-white m-[10px] text-[72px] badge-lg">+</div>
                 <h2 className="card-title text-primary-content">
-                  Ma situatio den
+                 Mes évènements
                 </h2>
+</div>
                 <p className="text-primary-content">
-                  Nouveau employé, stagiaires, vente réussies? Dite le nous pour
-                  faire avancer le pays
+                  Visualiser ou créer des évènements que vous ferez pour le grand public. Foire, webinar,rencontre entreprise/client,etc... dites tout dans cette section
                 </p>
-              </button>
+              </Link>
             </div>
 
             <div className="card w-[90%] lg:w-96 bg-base-100 shadow-xl m-5 bg-secondary">

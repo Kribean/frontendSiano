@@ -16,13 +16,19 @@ export default function CardEvent(props) {
           <h2 className="text-white text-2xl font-bold">{props.date}</h2>
         </div>
       </figure>
-      <div className="card-body h-[150px]">
+      <div className="card-body ">
         <h3 className="card-title truncate">
-            Titre: {props.title}
+           Titre: {props.title}
         </h3>
+        <p> <span className="card-title">Entreprise:</span> Koulirou</p>
+        <p><span className="card-title">Catégorie:</span> agriculture</p>
+        <p><span className="card-title">Durée de l'évènement (en heure):</span> 2 h</p>
+        <p><span className="card-title">Prix:</span> 5 euro</p>
        <p className="break-all">
-        Description: {props.description}</p>
+       <span className="card-title">Description:</span> {props.description}</p>
       </div>
+
+      {props.isAdmin&&<button className="btn btn-error w-[100px] m-[10px]">Supprimer</button>}
     </div>
   );
 }

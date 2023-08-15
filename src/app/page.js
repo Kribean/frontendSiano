@@ -34,7 +34,7 @@ export default function Home() {
       <HomeBaner />
 
       <div className="flex flex-col w-full justify-start">
-        <h2 className="font-bold text-2xl ">
+        <h2 className="font-bold text-lg lg:text-2xl ">
           Les meilleurs entreprises locales
         </h2>
         <div className="flex flex-wrap gap-4  p-[20px]">
@@ -43,7 +43,7 @@ export default function Home() {
         </div>
       </div>
       <div className="flex flex-col w-full justify-start">
-        <h2 className="font-bold text-2xl ">Les entreprises locales</h2>
+        <h2 className="font-bold text-lg lg:text-2xl ">Les entreprises locales</h2>
         <div className="flex flex-wrap gap-4  p-[20px]">
           <CardCompany companyTitle="Fruit péyi" />
           <CardCompany companyTitle="Sport and Co" />
@@ -51,7 +51,7 @@ export default function Home() {
       </div>
 
       <div className="flex flex-col w-full justify-start">
-        <h2 className="font-bold text-2xl ">Siano en quelques chiffres</h2>
+        <h2 className="font-bold text-lg lg:text-2xl ">Siano en quelques chiffres</h2>
         <div className="flex">
           <StatComponent />
         </div>

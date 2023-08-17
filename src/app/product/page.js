@@ -60,7 +60,7 @@ export default function Product() {
       <Navbar2 />
       <ProductBar handleOpenModal={handleOpenModal} />
       <div className=" flex flex-wrap gap-4 min-h-screen bg-base-200 m-[20px]">
-        {data.map((element) => {
+        {data.map((element,index) => {
           return (
             <CardProduct
               description={element.description}
@@ -70,6 +70,7 @@ export default function Product() {
               idCompany={element.idCompany}
               price={element.price}
               createdAt={element.createdAt}
+              key={index}
             />
           );
         })}

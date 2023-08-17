@@ -22,7 +22,7 @@ export default function Consumer() {
             priority
           />
           <div>
-            <h1 className="text-5xl font-bold">ça arrive!</h1>
+            <h1 className="text-xl lg:text-5xl font-bold">ça arrive!</h1>
             <p className="py-6">
               Bientôt notre application sera disponible sur android
             </p>

@@ -15,7 +15,7 @@ export default function Profile() {
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="text-center lg:text-left">
-            <h1 className="text-5xl font-bold">Mon profil</h1>
+            <h1 className="text-xl lg:text-5xl font-bold">Mon profil</h1>
             <p className="py-6">
               Bel bonjou! Nou ka espéré projè ta la ka édé'w! Si ou ni bagay pou
               di nou, pa ézité krié nou an lè rézo nou an 💻🌱🏢

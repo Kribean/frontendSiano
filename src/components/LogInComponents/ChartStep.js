@@ -8,9 +8,9 @@ const ButtonStep = ({number,setStep})=>{
         setStep(number)
     }
     return(
-        <div className="flex w-full flex-row justify-end">
-        <button onClick={()=>{goToNextStep(number)}} className="btn btn-success m-[10px] w-[100px] btn-sm">Oui</button>
-        <Link href="/" className="btn btn-error m-[10px] btn-sm">Je n'accepte pas les conditions</Link>
+        <div className="flex w-full flex-col lg:flex-row justify-center lg:justify-end">
+        <button onClick={()=>{goToNextStep(number)}} className="btn btn-neutral m-[10px] lg:w-[100px] btn-sm">I bon mem</button>
+        <Link href="/" className="btn btn-neutral m-[10px] btn-sm">Awa, man pa dako</Link>
         </div>
     )
 }
@@ -18,7 +18,7 @@ export default function ChartStep() {
     const [step,setStep] =useState (1);
   return (
     <div className="flex w-full flex-col justify-center m-[20px]">
-      <h1 className="text-5xl font-bold m-[20px]"> Eligibilité à Siano</h1>
+      <h1 className="text-xl lg:text-5xl font-bold m-[20px]"> Eligibilité à Siano - à lire obligatoirement:</h1>
       <ul className=" hidden lg:steps">
         <li className="step step-primary"></li>
         <li className={!(step>1&&step<12)?"step ":"step step-primary"}></li>
@@ -35,10 +35,14 @@ export default function ChartStep() {
       {/*etre antillais */}
 { step==1&&     <div className="flex flex-col m-[20px]">
         <h2 className="text-2xl font-bold">Je correspond à un de ces critères?</h2>
-        <p>
-          Je suis née aux Antilles OU je suis mariée à un(e) Antillais(e) OU mon
-          enfant à un parent antillais
-        </p>
+<ul>
+<li>
+          Je suis une entreprise qui a compris le concept de Siano. En effet Siano est une plateforme faite pour dynamiser l'écosysteme caribéen/guyanais. Pour cela Siano me fournira des contacts clients qui ont une appétence pour mon champ d'activité. Je comprend donc que j'utiliserai ses contacts à bon essiant.
+        </li>
+        <li>
+          Je suis une entreprise située aux antilles ou en Guyane.
+        </li>
+</ul>
         <ButtonStep setStep={setStep} number={2}/>
       </div>}
 
@@ -55,7 +59,7 @@ export default function ChartStep() {
         <p>
           Mon entreprise ne promeut pas ou n'est pas associée à des activités
           liées à la sexualité, aux drogues, à la violence ou au racisme, à la
-          détérioration de la culture antillaise
+          détérioration de la culture antillaise/guyannaise
         </p>
         <ButtonStep setStep={setStep} number={4}/>
       </div>}
@@ -65,7 +69,7 @@ export default function ChartStep() {
         <h2 className="text-2xl font-bold">Je suis d'accord pour:</h2>
         <p>
           Fournir des informations sur le nombre d'employés et de stagiaires au
-          cours de l'année.
+          cours de l'année. Je permets à la team Siano de me contacter au cours de l'année pour prendre ces informations et les utiliser en terme de statistique ou pour promouvoir l'avancée des entreprises sur le territoire.
         </p>
         <ButtonStep setStep={setStep} number={5}/>
       </div>}
@@ -73,7 +77,21 @@ export default function ChartStep() {
       {/*Siano*/}
 {step==5&&      <div className="flex flex-col m-[20px]">
         <h2 className="text-2xl font-bold">Je suis d'accord pour:</h2>
-        <p>Accepter les décisions de l'équipe Siano.</p>
+        <ul>
+          <li>
+            Participer à une cagnotte à hauteur de 1 euro minimum au cas où la team Siano en a besoin.
+            En effet j'ai pleinement conscience du bienfait que peut apporter une plateforme gratuite comme Siano cependant je suis pleinement conscient que la mise en ligne de la plateforme entraine des frais comme l'utilisation de serveurs.
+          </li>
+          <li>
+          Communiquer sur mon entreprise en faisant une présentation physique ou vidéo pour que le grand public comprenne qui je suis. Aussi j'accepte que Siano me fasse de la publicité en publiant texte ou vidéo de mon entreprise sur ses réseaux sociaux (youtube,LinkedIn,Instagram,...). La team Siano en discutera avec moi.
+          </li>
+          <li>
+          Mettre que des informations valides sur mon compte. Si je ne respecte pas cela, la team Siano pourra m'exclure de la plateforme.
+          </li>
+          <li>
+          Accepter les décisions de l'équipe Siano.
+          </li>
+          </ul>
         <ButtonStep setStep={setStep} number={6}/>
       </div>}
 
@@ -157,7 +175,7 @@ export default function ChartStep() {
         <h2 className="text-2xl font-bold">
         Condition:
         </h2>
-        <p>Siano est un projet non lucratif ayant pour but d'améliorer le contexte socio économique antillais. Ainsi si mon entreprise grossit je souhaite prende des stagiaires ou des employés antillais dans le courant de la première ou deuxième année après mon inscription </p>
+        <p>Siano est un projet non lucratif ayant pour but d'améliorer le contexte socio économique antillais. Les entreprises qui participent à Siano se doivent d'avoir des ambitions fortes de croissance. Ainsi les entreprises s'inscrivant à Siano se doivent dans leur prévisionnel de prévoir l'emploi de stagiaire ou d'employé locaux. Si cela n'est pas rendu possible du fait des réalités économiques entre autre, Siano se réverve le droit de rendre indisponible ses services.</p>
         <ButtonStep setStep={setStep} number={11}/>
       </div>}
 

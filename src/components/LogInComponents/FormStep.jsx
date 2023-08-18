@@ -88,7 +88,7 @@ export default function FormStep({ setGoToChart }) {
   return (
     <div className="hero min-h-screen bg-base-200 text-neutral p-0 justify-center">
       <div className="hero-content flex-col lg:flex-row-reverse p-0">
-        <div className="text-center lg:w-full w-[300px] break-all lg:text-left">
+        <div className="text-center lg:w-full w-[300px] break-words lg:text-left">
           <h1 className="text-lg lg:text-5xl font-bold">Inscription à Siano</h1>
           <p className="lg:py-6">
             Connectez-vous à Siano et découvrez un univers de possibilités pour

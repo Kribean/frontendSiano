@@ -8,7 +8,7 @@ export default function Profile() {
       <div className="w-full hidden lg:block">
         <Navbar />
       </div>
-      <div className="w-full block lg:hidden fixed bg-light z-[100] bottom-0">
+      <div className="w-full block lg:hidden fixed bg-light z-[100] bottom-0 text-neutral">
         <Navbar />
       </div>
       <Navbar2 />

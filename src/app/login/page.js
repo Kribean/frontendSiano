@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function SignIn() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between w-full">
+    <main className="flex min-h-screen flex-col items-center justify-between w-full text-neutral">
       <Navbar />
       <div className="hero min-h-screen bg-base-200">
   <div className="hero-content flex-col lg:flex-row-reverse">

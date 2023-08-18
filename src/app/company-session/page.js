@@ -5,7 +5,7 @@ import Footer from "@/components/Footer/Footer";
 import Link from "next/link";
 export default function CompanySession() {
   return (
-    <main className="relative flex min-h-screen flex-col items-center justify-between w-full">
+    <main className="relative flex min-h-screen flex-col items-center justify-between w-full text-neutral">
       <div className="w-full hidden lg:block">
         <Navbar />
       </div>

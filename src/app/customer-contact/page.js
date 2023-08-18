@@ -29,7 +29,7 @@ export default function CustomerContact() {
       </div>
       <Navbar2 />
       <CustomerBar handleOpenModal={handleOpenModal} />
-      <div className=" flex flex-wrap gap-4 min-h-screen bg-base-200 m-[20px]">
+      <div className=" flex flex-wrap gap-4 min-h-screen bg-base-200 m-[20px] text-neutral">
         {data.map((element) => {
           return (
             <CardCustomer name={element.name} idCustomer={element.idCustomer} />

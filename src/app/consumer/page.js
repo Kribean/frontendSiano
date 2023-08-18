@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Consumer() {
   return (
-    <main className="flex relative min-h-screen flex-col w-full">
+    <main className="flex relative min-h-screen flex-col w-full text-neutral">
       <div className="w-full hidden lg:block">
         <Navbar />
       </div>

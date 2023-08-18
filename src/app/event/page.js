@@ -58,7 +58,7 @@ export default function Event() {
       <div className="w-full block lg:hidden fixed bg-light z-[100] bottom-0">
         <Navbar />
       </div>
-      <div className=" flex flex-wrap gap-4 min-h-screen bg-base-200">
+      <div className=" flex flex-wrap gap-4 min-h-screen bg-base-200 text-neutral">
         {dataCalendar.map((element,index) => {
           return (
             <CardEvent

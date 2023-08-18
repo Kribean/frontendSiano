@@ -98,7 +98,7 @@ export default function ChartStep() {
       </ol>
       {/*etre antillais */}
       {step == 1 && (
-        <div className="flex flex-col m-[20px]">
+        <div className="flex flex-col m-[20px] text-neutral">
           <h2 className="text-lg lg:text-2xl font-bold">
           Mwen ka korespond a kritè ta la
           </h2>

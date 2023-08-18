@@ -19,7 +19,7 @@ export default function CompanyCalendar() {
 
   const dataCalendar = [{date:"5/12/2023",title:"Foire aux légume",description:"vente de fruit et légume retrouver mon stand"},{date:"12/08/2023",title:"Journée de l'énergie",description:"découvrer les énergie solaire et chauffe eau"},{date:"30/11/2023",title:"Journée sportive",description:"venez découvrir notre randonnée "} ]
   return (
-    <main className="relative flex min-h-screen flex-col items-center justify-between w-full">
+    <main className="relative flex min-h-screen flex-col items-center justify-between w-full text-neutral">
       {isModalOpen && <ModalCalendarCompany handleCloseModal={handleCloseModal} />}
       <div className="w-full hidden lg:block">
         <Navbar />

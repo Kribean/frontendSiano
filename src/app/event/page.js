@@ -1,8 +1,12 @@
+'use client'
+
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import CardEvent from "@/components/CardEvent/CardEvent";
+import { useState } from "react";
 
 export default function Event() {
+  const [isActual,setIsActual] = useState(false);
   const dataCalendar = [
     {
       date: "5/12/2023",
@@ -58,7 +62,15 @@ export default function Event() {
       <div className="w-full block lg:hidden fixed bg-light z-[100] bottom-0">
         <Navbar />
       </div>
-      <div className=" flex flex-wrap gap-4 min-h-screen bg-base-200 text-neutral">
+      <div className="form-control">
+          <label className="label cursor-pointer">
+<div className="flex flex-row jsutify-end m-[20px]">
+<span className="label-text font-bold mx-[10px]">{isActual?"Evènement du jour":"Tous les évènements"}</span>
+            <input type="checkbox" className="toggle" onChange={()=>{setIsActual(!isActual)}} checked={isActual} />
+</div>
+          </label>
+        </div>
+      <div className=" flex flex-wrap gap-4 min-h-screen bg-base-200 text-neutral m-[20px]">
         {dataCalendar.map((element,index) => {
           return (
             <CardEvent

@@ -65,7 +65,7 @@ export default function Event() {
       <div className="form-control">
           <label className="label cursor-pointer">
 <div className="flex flex-row jsutify-end m-[20px]">
-<span className="label-text font-bold mx-[10px]">{isActual?"Evènement du jour":"Tous les évènements"}</span>
+<span className="label-text font-bold mx-[10px]">{isActual?"Evènements du jour":"Tous les évènements"}</span>
             <input type="checkbox" className="toggle" onChange={()=>{setIsActual(!isActual)}} checked={isActual} />
 </div>
           </label>

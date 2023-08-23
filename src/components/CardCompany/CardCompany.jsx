@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function CardCompany(props) {
+export default function CardCompany({company}) {
   return (
     <div className="card w-full lg:w-96 bg-base-100 shadow-xl">
       <figure className="w-full h-[100px] relative">
@@ -13,21 +13,23 @@ export default function CardCompany(props) {
           style={{objectFit: "cover"}}
         />
                 <div className="absolute flex flex-col top-0 left-0 w-full h-full bg-black bg-opacity-40 flex items-center justify-center">
-                <div className="badge badge-success">fortement recommendée</div>
-          <h2 className="text-white text-2xl font-bold">{props.companyTitle}</h2>
+                {company.label=="A+"&&<div className="badge badge-success">Excellente entreprise</div>}
+                {company.label=="A"&&<div className="badge badge-success">Entreprise fortement recommandée</div>}
+                {company.label=="B"&&<div className="badge badge-info">Entreprise bien vue</div>}
+                {company.label=="C"&&<div className="badge badge-secondary">Entreprise prometteuse</div>}
+          <h2 className="text-white text-2xl font-bold">{company.companyName}</h2>
         </div>
       </figure>
       <div className="card-body ">
         <h3 className="card-title truncate">
-            Produit: {props.companyProducts}
+            Produit:
         </h3>
-       <p className="truncate break-all text-ellipsis overflow-hidde">Description entreprise ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff dddddddddddddddddddddddddddddddddddddddddddddddd ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff dddddddddddddddddddddddddddddddddddddddddddddddd ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff dddddddddddddddddddddddddddddddddddddddddddddddd</p>
-       <button  className="btn btn-outline btn-info" >Adresse: 5 Rue Bertrand Panouse, 31170 Tournefeuille</button>
-                  <button  className="btn btn-outline btn-info" >Téléphone: 0656585</button>
-                  <button  className="btn btn-outline btn-info" >Mail: ramael.bruno@gmail.com</button>
+        {company.listOfProduct.map((element,index)=>{return <div key={index} className="badge badge-neutral">{element}</div>})}
+       <p className="truncate break-all text-ellipsis overflow-hidde">Description: {company.description}</p>
+       <p  className="text-neutral" >Adresse: {company.adress}</p>
+                  <p  className="text-neutral" >Téléphone: {company.phoneNumber}</p>
+                  <p  className="text-neutral" >Mail: {company.email}</p>
         <div className="card-actions justify-end">
-          <div className="badge badge-outline">Fashion</div>
-          <div className="badge badge-outline">Products</div>
         </div>
       </div>
     </div>

@@ -1,17 +1,73 @@
+"use client"
+
 import HomeBaner from "@/components/HomeBanner/HomeBanner";
 import Navbar from "@/components/Navbar/Navbar";
 import CardCompany from "@/components/CardCompany/CardCompany";
 import StatComponent from "@/components/StatComponent/StatComponent";
 import Notification from "@/components/Notification/Notification";
 import Footer from "@/components/Footer/Footer";
+import { getTenCompanies,getTenUpgradeCompanies,getNotification,getFigure } from "@/services/api";
+import { useEffect, useState } from "react";
 
 export default function Home() {
 
-   const typeOfNotification=1
-   const title="le titre"
-   const description="la description est la"
-   const appearUrl=false
-   const url=""
+   const [tenCompanies,setTenCompanies] =useState([]);
+   const [tenUpgradeCompanies,setTenUpgradeCompanies] =useState([]);
+   const [notification,setNotification] =useState();
+   const [statistic,setStatistic] =useState([]);
+
+   useEffect(()=>{
+
+      getTenCompanies()
+        .then(response => {    if (!response.ok) {
+          throw new Error('Erreur lors de l\'appel API');
+        }
+        return response.json();})
+        .then(data => {
+          setTenCompanies(data);
+        })
+        .catch(error => {
+          console.error('Une erreur s\'est produite :', error);
+        });
+
+        getTenUpgradeCompanies()
+        .then(response => {    if (!response.ok) {
+          throw new Error('Erreur lors de l\'appel API');
+        }
+        return response.json();})
+        .then(data => {
+          setTenUpgradeCompanies(data);
+        })
+        .catch(error => {
+          console.error('Une erreur s\'est produite :', error);
+        });
+
+        getNotification()
+        .then(response => {    if (!response.ok) {
+          throw new Error('Erreur lors de l\'appel API');
+        }
+        return response.json();})
+        .then(data => {
+          setNotification(data[0]);
+        })
+        .catch(error => {
+          console.error('Une erreur s\'est produite :', error);
+        });
+
+        getFigure()
+        .then(response => {    if (!response.ok) {
+          throw new Error('Erreur lors de l\'appel API');
+        }
+        return response.json();})
+        .then(data => {
+          setStatistic(data);
+        })
+        .catch(error => {
+          console.error('Une erreur s\'est produite :', error);
+        });
+
+
+   },[])
 
   return (
     <main className="relative flex min-h-screen flex-col items-center justify-between w-full">
@@ -21,12 +77,7 @@ export default function Home() {
       <div className="w-full block lg:hidden fixed bg-light z-[100] bottom-0">
         <Navbar />
       </div>
-<Notification
-    typeOfNotification={typeOfNotification}
-    title={title}
-    description={description}
-    appearUrl={appearUrl}
-    url={url}/>
+<Notification notification={notification}/>
       <HomeBaner />
 
       <div className="flex flex-col w-full justify-start">
@@ -34,22 +85,20 @@ export default function Home() {
           Les meilleurs entreprises locales
         </h2>
         <div className="flex flex-wrap gap-4  p-[20px]">
-          <CardCompany companyTitle="Pate en po" />
-          <CardCompany companyTitle="Cool energy" />
+        {tenUpgradeCompanies.map((element,index)=><CardCompany key={index} company={element} />)}
         </div>
       </div>
       <div className="flex flex-col w-full justify-start">
         <h2 className="font-bold text-lg lg:text-2xl ">Les entreprises locales</h2>
         <div className="flex flex-wrap gap-4  p-[20px]">
-          <CardCompany companyTitle="Fruit péyi" />
-          <CardCompany companyTitle="Sport and Co" />
+          {tenCompanies.map((element,index)=><CardCompany key={index} company={element} />)}
         </div>
       </div>
 
       <div className="flex flex-col w-full justify-start">
         <h2 className="font-bold text-lg lg:text-2xl ">Siano en quelques chiffres</h2>
         <div className="flex">
-          <StatComponent />
+          <StatComponent statistic={statistic} />
         </div>
       </div>
       <Footer />

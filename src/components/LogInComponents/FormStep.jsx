@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function FormStep({ setGoToChart }) {
+export default function FormStep(props) {
   const dataTheme = [
     {
       activity: "Activité sportive",
@@ -79,11 +79,47 @@ export default function FormStep({ setGoToChart }) {
     },
   ];
 
-  const [selected, setSelected] = useState("");
+  const goToNextStepIsChart = ()=>{
 
-  const handleChangeActivity = (event) => {
-    setSelected(event.target.value);
+if(props.companyName.length>2
+  &&props.name.length>2
+  &&props.firstname.length>2
+  &&props.phoneNumber.length==10
+  &&props.postalCode.length>2
+  &&props.adress.length>2
+  &&props.description.length>10
+  &&dataTheme.find(element=>element.activity===props.thematicCompany)
+  &&props.email.length>4
+  &&props.siren.length==9)
+    {props.setGoToChart(true);}
   };
+
+
+  const containsOnlyLetters = (input) => {
+    const letterRegex = /^[A-Za-z]+$/;
+    return letterRegex.test(input);
+  };
+
+  const handleTextChange = (event,foncSet) => {
+    const newValue = event.target.value;
+    if (containsOnlyLetters(newValue) || newValue === '') {
+      foncSet(newValue);
+    }};
+
+    const filterNonNumeric = (input) => {
+      return input.replace(/\D/g, ''); 
+    };
+
+    const handleNumberChange = (event,funcSet) => {
+      const newValue = event.target.value;
+      const numericValue = filterNonNumeric(newValue);
+      funcSet(numericValue);
+    };
+
+    const handleChangeEmail = (e) => {
+      const sanitizedEmail = e.target.value.replace(/[^a-zA-Z0-9@.-]/g, "");
+     props.setEmail(sanitizedEmail);
+    };
 
   return (
     <div className="hero min-h-screen bg-base-200 text-neutral p-0 justify-center">
@@ -104,6 +140,8 @@ export default function FormStep({ setGoToChart }) {
               </label>
               <input
                 type="text"
+                value={props.companyName}
+                onChange={(event)=>{handleTextChange(event,props.setCompanyName)}}
                 placeholder="Nom de l'entreprise"
                 className="input input-bordered w-[300px] lg:w-full"
               />
@@ -115,6 +153,8 @@ export default function FormStep({ setGoToChart }) {
               </label>
               <input
                 type="text"
+                value={props.name}
+                onChange={(event)=>{handleTextChange(event,props.setName)}}
                 placeholder="Nom du chef d'entreprise"
                 className="input input-bordered w-[300px] lg:w-full"
               />
@@ -126,6 +166,8 @@ export default function FormStep({ setGoToChart }) {
               </label>
               <input
                 type="text"
+                value={props.firstname}
+                onChange={(event)=>{handleTextChange(event,props.setFirstname)}}
                 placeholder="Prénom du chef d'entreprise"
                 className="input input-bordered w-[300px] lg:w-full"
               />
@@ -137,6 +179,9 @@ export default function FormStep({ setGoToChart }) {
               </label>
               <input
                 type="text"
+                maxLength="10"
+                value={props.phoneNumber}
+                onChange={(event)=>{handleNumberChange(event,props.setPhoneNumber)}}
                 placeholder="Téléphone"
                 className="input input-bordered w-[300px] lg:w-full"
               />
@@ -144,13 +189,81 @@ export default function FormStep({ setGoToChart }) {
 
             <div className="form-control">
               <label className="label">
+                <span className="label-text">Adresse</span>
+              </label>
+              <input
+                type="text"
+                value={props.adress}
+                onChange={(event)=>{props.setAdress(event.target.value)}}
+                placeholder="L'adresse de votre entreprise"
+                className="input input-bordered w-[300px] lg:w-full"
+              />
+            </div>
+{props.adress?.length>10&&<>
+  <>
+  <div className="form-control my-[20px]">
+    <h2 className="text-bold text-md text-neutral my-[5px]">Boostez votre visibilité avec Siano !</h2>
+    <p className="text-sm text-neutral my-[5px]">
+    Siano offre une opportunité unique aux entreprises qui joue le jeux : ouvrez vos portes aux visiteurs ou créez des vidéos de votre entreprise. En partageant ainsi la visibilité de votre entreprise, vous boosterez votre visibilité sur notre plateforme et renforcerez notre communauté.
+    </p>
+    <p className="text-bold text-sm text-neutral my-[5px]">
+    Seriez-vous intéressés à accueillir des visiteurs sur votre lieu de travail ou à créer une vidéo présentant votre entreprise pour une meilleure visibilité sur la plateforme Siano ?
+    </p>
+
+              <label className="label cursor-pointer w-[100px]">
+                <span className="label-text">
+                Non
+                </span>
+                <input
+                  type="radio"
+                  checked={props.haveAPhysicalSite==false}
+                  onChange={()=>{props.setHaveAPhysicalSite(false)}}
+                  name="radio-company"
+                  className="radio checked:bg-neutral"
+                />
+              </label>
+            </div>
+            <div className="form-control">
+              <label className="label cursor-pointer w-[100px]">
+                <span className="label-text">
+                Oui
+                </span>
+                <input
+                  type="radio"
+                  checked={props.haveAPhysicalSite==true}
+                  onChange={()=>{props.setHaveAPhysicalSite(true)}}
+                  name="radio-company"
+                  className="radio checked:bg-neutral"
+                />
+              </label>
+            </div>
+</>
+</>}
+            <div className="form-control">
+              <label className="label">
                 <span className="label-text">Code Postal</span>
               </label>
               <input
                 type="text"
+                maxLength="5"
+                value={props.postalCode}
+                onChange={(event)=>{handleNumberChange(event,props.setPostalCode)}}
                 placeholder="Code Postal"
                 className="input input-bordered w-[300px] lg:w-full"
               />
+            </div>
+
+            <div className="form-control">
+              
+            <label className="label">
+                <span className="label-text">Description</span>
+              </label>
+<textarea 
+rows="4" 
+value={props.description}
+onChange={(e)=>{props.setDescription(e.target.value)}}
+className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Donnez une bonne description de votre entreprise..."></textarea>
+
             </div>
 
             <div className="form-control">
@@ -159,6 +272,9 @@ export default function FormStep({ setGoToChart }) {
               </label>
               <input
                 type="text"
+                maxLength="64"
+                value={props.email}
+                onChange={handleChangeEmail}
                 placeholder="Email"
                 className="input input-bordered w-[300px] lg:w-full"
               />
@@ -170,6 +286,9 @@ export default function FormStep({ setGoToChart }) {
               </label>
               <input
                 type="text"
+                maxLength="9"
+                value={props.siren}
+                onChange={(event)=>{handleNumberChange(event,props.setSiren)}}
                 placeholder="Siren"
                 className="input input-bordered w-[300px] lg:w-full"
               />
@@ -180,8 +299,8 @@ export default function FormStep({ setGoToChart }) {
                 <span className="label-text">Activité</span>
               </label>
               <select
-                value={selected}
-                onChange={handleChangeActivity}
+                value={props.thematicCompany}
+                onChange={(e)=>{props.setThematicCompany(e.target.value)}}
                 className="select select-bordered"
               >
                 <option value="" disabled>
@@ -194,24 +313,16 @@ export default function FormStep({ setGoToChart }) {
                 ))}
               </select>
             </div>
-
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Mot de passe</span>
-              </label>
-              <input
-                type="text"
-                placeholder="Taper votre mot de passe, retenez le bien!"
-                className="input input-bordered w-[300px] lg:w-full"
-              />
-            </div>
-            <div className="form-control">
+{props.thematicCompany=="Agriculture et Pêche"&& <>
+  <div className="form-control">
               <label className="label cursor-pointer">
                 <span className="label-text">
-                  Je n'ai une certification anti-chloredécone
+                Je n' ai pas un résultat négatif du diagnostic chloredécone
                 </span>
                 <input
                   type="radio"
+                  checked={props.chloreDecCertif==false}
+                  onChange={()=>{props.setChloreDecCertif(false)}}
                   name="radio-10"
                   className="radio checked:bg-neutral"
                 />
@@ -220,14 +331,31 @@ export default function FormStep({ setGoToChart }) {
             <div className="form-control">
               <label className="label cursor-pointer">
                 <span className="label-text">
-                  J'ai une certification anti-chloredécone
+                J' ai un résultat négatif du diagnostic chloredécone
                 </span>
                 <input
                   type="radio"
+                  checked={props.chloreDecCertif==true}
+                  onChange={()=>{props.setChloreDecCertif(true)}}
                   name="radio-10"
                   className="radio checked:bg-success"
                 />
               </label>
+            </div>
+</>}
+
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Mot de passe (ne mettez pas d'espaces)</span>
+              </label>
+              <input
+                type="text"
+                maxLength="24"
+                value={props.password}
+                onChange={(e)=>{props.setPassword(e.target.value.replace(" ",""))}}
+                placeholder="Taper votre mot de passe, retenez le bien!"
+                className="input input-bordered w-[300px] lg:w-full"
+              />
             </div>
 
             <div className="form-control">
@@ -285,11 +413,8 @@ export default function FormStep({ setGoToChart }) {
               />
             </div>
             <button
-              onClick={() => {
-                setGoToChart(true);
-              }}
+              onClick={goToNextStepIsChart}
               className="btn btn-primary w-[200px] lg:w-full  m-[20px]"
-              href="/login"
             >
               Valider
             </button>

@@ -51,3 +51,43 @@ export function logToAccount (body)
         body: JSON.stringify(body),
       })
 };
+
+export function getProfile (idCompany,token)
+{
+   return fetch(`${API_URL}/api/auth-company/company/${idCompany}`, {
+        method: "GET",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`
+        },
+      })
+};
+
+export function modifyProfile (body,token)
+{
+   return fetch(`${API_URL}/api/auth-company/update-company`, {
+        method: "PUT",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`
+        },
+        body: JSON.stringify(body),
+        
+      })
+};
+
+
+export function deleteProfile (token)
+{
+   return fetch(`${API_URL}/api/auth-company/delete-company`, {
+        method: "DELETE",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`
+        }
+        
+      })
+};

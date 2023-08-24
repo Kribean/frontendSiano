@@ -91,3 +91,43 @@ export function deleteProfile (token)
         
       })
 };
+
+export function getAllCustomers (thematics,token)
+{
+   return fetch(`${API_URL}/api/auth-consumer?listOfThematics=${thematics}`, {
+        method: "GET",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`
+        }
+        
+      })
+};
+
+export function AddAndgetMyCustomers (idConsumer,token)
+{
+   return fetch(`${API_URL}/api/auth-company/update-consumer-and-allow-assess/${idConsumer}`, {
+        method: "PUT",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`
+        }
+        
+      })
+};
+
+export function getMyConsumers (token)
+{
+  
+  return fetch(`${API_URL}/api/auth-company/get-my-clients`, {
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`
+    }
+    
+  })
+}

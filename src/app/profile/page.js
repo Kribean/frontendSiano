@@ -31,10 +31,9 @@ export default function Profile() {
   useEffect(()=>{
 
     const info = localStorage.getItem("informationSiano");
-    console.log("ichiban")
+
     if(JSON.parse(info))
     {
-      console.log("niban",JSON.parse(info).companyId,JSON.parse(info).token)
       getProfile(JSON.parse(info).companyId,JSON.parse(info).token)
       .then((data)=>{
           if(data.ok)

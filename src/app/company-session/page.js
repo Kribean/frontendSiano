@@ -38,7 +38,7 @@ const [informationSiano,setInformationSiano]=useState()
         <div className="card w-[90%] lg:w-96 bg-base-100 shadow-xl m-5 bg-primary">
           <Link href={"/company-calendar"} className="card-body w-full">
 <div className="flex flex-row">
-<div className="badge badge-accent h-[80px] text-center text-white m-[10px] text-[72px] badge-lg">+</div>
+<div className="badge badge-accent h-[42px] text-center text-white m-[10px] text-[24px] badge-lg">+</div>
             <h2 className="card-title text-primary-content">
              Mes évènements
             </h2>

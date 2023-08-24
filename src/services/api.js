@@ -131,3 +131,46 @@ export function getMyConsumers (token)
     
   })
 }
+
+export function addProduct (body,token)
+{
+  
+  return fetch(`${API_URL}/api/product`, {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`
+    },
+    body: JSON.stringify(body),
+    
+  })
+}
+
+export function getMyProducts (token)
+{
+  
+  return fetch(`${API_URL}/api/product/company`, {
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`
+    }
+    
+  })
+};
+
+export function deleteMyProducts (token,idProduct)
+{
+  
+  return fetch(`${API_URL}/api/product/${idProduct}`, {
+    method: "DELETE",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`
+    }
+    
+  })
+}

@@ -5,18 +5,16 @@ import { registerLocale, setDefaultLocale } from  "react-datepicker";
 import fr from 'date-fns/locale/fr';
 registerLocale('fr', fr)
 import { useState } from "react";
-import { createEvent } from "@/services/api";
+import { createJob } from "@/services/api";
 import "react-datepicker/dist/react-datepicker.css";
 
-export default function ModalCalendarCompany(props){
+export default function ModalJobCompany(props){
   
 
   const [title,setTitle] = useState("");
   const [description,setDescription] = useState("");
    const [place,setPlace] = useState("");
-   const [duration,setDuration] = useState(1);
-   const [startAt, setStartAt] = useState(new Date());
-  const [price,setPrice] = useState(0);
+
 
   const allowedCharacters = /^[A-Za-z0-9\s]*$/; // Caractères alphanumériques et espaces autorisés
 
@@ -44,7 +42,7 @@ const handleDescriptionOrTitleChange = (event,funcSet) => {
     funcSet(userInput);
   }}
 
-  const createEventAndClose = ()=>{
+  const createJobAndClose = ()=>{
 
 if(title.length>3&&description.length>5&&place.length>3)
 {
@@ -52,14 +50,14 @@ const info = localStorage.getItem("informationSiano");
 
 if(JSON.parse(info))
 {
-  const body = {title,description,place,startAt,duration,price,
+  const body = {title,description,place,
   emailContact:JSON.parse(info).email,
   phoneContact:JSON.parse(info).phoneNumber,
   category:JSON.parse(info).thematicCompany,
   companyName:JSON.parse(info).companyName
 }
 
-createEvent(body,JSON.parse(info).token)
+createJob(body,JSON.parse(info).token)
 .then((data)=>{
   if(data.ok)
   {
@@ -67,7 +65,7 @@ createEvent(body,JSON.parse(info).token)
   }
 })
 .then((data)=>{
-  props.setDataCalendar(data);
+  props.setDataJob(data);
   props.handleCloseModal()
 
 })
@@ -81,25 +79,13 @@ createEvent(body,JSON.parse(info).token)
                 <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
           <div className="modal-box">
           <div className="flex flex-col w-full">
-        <h2>Créer évènement</h2>
+        <h2>Créer une offre d'emploi</h2>
       </div>
-      <div className="form-control">
-          <label className="label">
-            <span className="label-text">Quand a lieu l'évènement? - <span className="text-bold">Tous les champs doivent être remplis</span></span>
-          </label>
-          <DatePicker className="input input-bordered" dateFormat="dd/MM/yyyy" locale="fr" selected={startAt} onChange={(date) => {setStartAt(date)}} />
-        </div>
-      <div className="form-control">
-          <label className="label">
-            <span className="label-text">Durée de l'évènement (en heure)</span>
-          </label>
-          <input type="number" maxLength={3} value={duration} onChange={(event)=>{setDuration(event.target.value)}} placeholder="Durée de l'évènement" className="input input-bordered" />
-        </div>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Où à lieu l'évènement? (ne mettez pas d'accent ou de virgule)</span>
           </label>
-          <input type="text" value={place} onChange={handlePlaceChange} placeholder="titre" className="input input-bordered" />
+          <input type="text" value={place} onChange={handlePlaceChange} placeholder="Lieu de travail" className="input input-bordered" />
         </div>
       <div className="form-control">
           <label className="label">
@@ -113,18 +99,9 @@ createEvent(body,JSON.parse(info).token)
           </label>
           <textarea type="text" value={description} onChange={(event)=>{handleDescriptionOrTitleChange(event,setDescription)}} rows={3} maxLength={255} placeholder="description" className="input input-bordered" />
         </div>
-        <div className="form-control">
-          <label className="label">
-            <span className="label-text">Prix en euro</span>
-          </label>
-          <div className="flex flex-row">
-          <input type="number" maxLength={3} value={price} onChange={event=>setPrice(event.target.value)} placeholder="prix en euro" className="input input-bordered w-[100px]" />
-          <p className="text-neutral text-lg">&euro;</p>
-          </div>
-        </div>
 
         <div className="flex flex-row gap-4 justify-end m-5">
-        <button className="btn btn-success" onClick={createEventAndClose}>Créer</button>
+        <button className="btn btn-success" onClick={createJobAndClose}>Créer</button>
             <button className="btn btn-error" onClick={props.handleCloseModal}>Fermer</button>
 </div>
           </div>

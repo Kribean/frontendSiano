@@ -3,12 +3,14 @@ import Navbar from "@/components/Navbar/Navbar";
 import Navbar2 from "@/components/Navbar2/Navbar2";
 import Footer from "@/components/Footer/Footer";
 import { useEffect, useState } from "react";
-import ModalCalendarCompany from "@/components/ModalCalendarCompany/ModalCalendarCompany";
-import CardEvent from "@/components/CardEvent/CardEvent";
-import { getAllEvents } from "@/services/api";
-export default function CompanyCalendar() {
+import ModalJobCompany from "@/components/ModalJobCompany/ModalJobCompany";
+import CardJob from "@/components/CardJob/CardJob";
+import { getAllJobs } from "@/services/api";
+
+
+export default function JobOfferCompany() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [dataCalendar, setDataCalendar] = useState([]);
+  const [dataJob, setDataJob] = useState([]);
   const handleOpenModal = () => {
     setIsModalOpen(true);
   };
@@ -22,15 +24,15 @@ export default function CompanyCalendar() {
 
     if(JSON.parse(info))
     {
-      getAllEvents(JSON.parse(info).companyId)
+      getAllJobs(JSON.parse(info).companyId)
       .then((data)=>{
         if(data.ok)
         {
           return data.json()
         }
-        throw new Error("no event, error")
+        throw new Error("no job, error")
       })
-      .then((data)=>setDataCalendar(data))
+      .then((data)=>setDataJob(data))
       .catch((error)=>{console.log("oops mistake on fetch")})
     }
     
@@ -38,7 +40,7 @@ export default function CompanyCalendar() {
 
  return (
     <main className="relative flex min-h-screen flex-col items-center justify-between w-full text-neutral">
-      {isModalOpen && <ModalCalendarCompany setDataCalendar={setDataCalendar} handleCloseModal={handleCloseModal} />}
+      {isModalOpen && <ModalJobCompany setDataJob={setDataJob} handleCloseModal={handleCloseModal} />}
       <div className="w-full hidden lg:block">
         <Navbar />
       </div>
@@ -46,27 +48,26 @@ export default function CompanyCalendar() {
         <Navbar />
       </div>
       <Navbar2 />
-      <h1 className="text-5xl font-bold">Evènements de mon entreprise</h1>
+      <h1 className="text-5xl font-bold">Emploi proposé de mon entreprise</h1>
       <div className="flex flex-col w-full">
         <div className="flex flex-row m-[20px]">
-      <button onClick={()=>handleOpenModal()} className="btn btn-primary">Créer un  évènement +</button>
+      <button onClick={()=>handleOpenModal()} className="btn btn-primary">Créer une offre +</button>
     </div>
       </div>
-      <h2 className="card-title">Liste de mes évènements</h2>
-     {dataCalendar?.length==0? <p className="text-neutral">Vous n'avez pas encore d'évènements programmés</p> :<div className="flex flex-wrap gap-2 w-full">
-        {dataCalendar?.map((element,index)=> <CardEvent key={index} 
+      <h2 className="card-title">Liste de mes offres</h2>
+     {dataJob?.length==0? <p className="text-neutral">Vous n'avez pas encore d'offres proposées</p> :<div className="flex flex-wrap gap-2 w-full">
+        {dataJob?.map((element,index)=> <CardJob key={index} 
         companyName={element.companyName}
-        idEvent={element._id}
+        idJob={element._id}
         title= {element.title}
         description={element.description}
+        createdAt={element.createdAt}
         place={element.place}
-        duration= {element.duration}
-        startAt={element.startAt}
         price={element.price}
-        categoryText={element?.category[0]}
+        category={element.category}
         emailContact={element.emailContact}
-        phoneContact={element.phoneContact} 
-        setDataCalendar={setDataCalendar}
+        phoneContact={element.phoneContact}
+        setDataJob={setDataJob} 
         isAdmin={true} />)}
       </div>}
       <Footer />

@@ -50,30 +50,21 @@ const [informationSiano,setInformationSiano]=useState()
         </div>
 
         <div className="card w-[90%] lg:w-96 bg-base-100 shadow-xl m-5 bg-secondary">
-          <button className="card-body">
+          <Link href="https://forms.gle/eB6BWqcJiRd9reEm6" target="_blank"  className="card-body">
             <h2 className="card-title text-secondary-content">
-              Ma situation
+              La situation de mon entreprise et sa visibilité
             </h2>
             <p className="text-secondary-content">
-              Nouveau employé, stagiaires, vente réussies? Dite le nous pour
-              faire avancer le pays
+              Nouveau employé, stagiaires, vente réussies, vidéos de votre entreprise? Dite le nous pour
+              faire avancer le territoire en <span className="text-bold">Cliquant ici</span>
             </p>
-          </button>
+          </Link>
         </div>
       </div>
 
       <FeedbackCompany />
     </div>
 
-    <div className="card w-[90%] bg-base-100 shadow-xl m-5 bg-info">
-      <button className="card-body">
-        <h2 className="card-title text-info-content">Ma situation</h2>
-        <p className="text-info-content">
-          Nouveau employé1, stagiaires, vente réussies? Dite le nous pour
-          faire avancer le pays
-        </p>
-      </button>
-    </div>
   </div>
   <Footer />
 </main>

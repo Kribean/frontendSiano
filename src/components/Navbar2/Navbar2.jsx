@@ -27,6 +27,9 @@ export default function Navbar2(props) {
             <li className="lg:m-5">
               <Link href="/profile">Mon profil</Link>
             </li>
+            <li className="lg:m-5">
+              <Link href="/joboffercompany">Mes offres d'emploi</Link>
+            </li>
             <li className="m-5">
               <button onClick={closeSession} className="btn btn-error">se déconnecter</button>
             </li>

@@ -174,3 +174,87 @@ export function deleteMyProducts (token,idProduct)
     
   })
 }
+
+export function createEvent (body,token)
+{
+  
+  return fetch(`${API_URL}/api/event`, {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`
+    },
+    body: JSON.stringify(body),
+    
+  })
+};
+
+export function deleteEvent (idEvent,token)
+{
+  
+  return fetch(`${API_URL}/api/event/${idEvent}`, {
+    method: "DELETE",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`
+    }
+    
+  })
+};
+
+export function getAllEvents (idCompany)
+{
+  
+  return fetch(`${API_URL}/api/event?idCompany=${idCompany}`, {
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json"
+    }
+    
+  })
+};
+
+export function createJob (body,token)
+{
+  
+  return fetch(`${API_URL}/api/job-offer`, {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`
+    },
+    body: JSON.stringify(body),
+    
+  })
+};
+
+export function getAllJobs (idCompany)
+{
+  
+  return fetch(`${API_URL}/api/job-offer?idCompany=${idCompany}`, {
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json"
+    }
+    
+  })
+};
+
+export function deleteJob (idJob,token)
+{
+  
+  return fetch(`${API_URL}/api/job-offer/${idJob}`, {
+    method: "DELETE",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`
+    }
+    
+  })
+};

@@ -6,7 +6,7 @@ export default function Navbar(props) {
     <>
       <div className="navbar w-full bg-base-100 px-10">
         <div className="navbar-start">
-          <div className="dropdown relative">
+          <div className="dropdown relative block lg:hidden">
             <label tabIndex={0} className="btn btn-ghost btn-circle">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -34,18 +34,16 @@ export default function Navbar(props) {
                 <Link href="/joboffer" className="text-neutral">Emploi</Link>
               </li>
             </ul>
-            <ul
-              tabIndex={0}
-              className="hidden lg:block menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+          </div>
+          <ul className="lg:flex lg:flex-row hidden lg:block"
             >
               <li>
-                <Link href="/event" className="text-neutral">Evènements</Link>
+                <Link href="/event" className="btn btn-neutral mx-[20px]">Evènements</Link>
               </li>
               <li>
-                <Link href="/joboffer" className="text-neutral">Emploi</Link>
+                <Link href="/joboffer" className="btn btn-neutral mx-[20px]">Emploi</Link>
               </li>
             </ul>
-          </div>
         </div>
         <div className="navbar-center">
           <Link className="btn btn-ghost normal-case text-xl" href="/">

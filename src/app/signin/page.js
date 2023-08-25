@@ -48,7 +48,6 @@ export default function LogIn() {
     .then((data)=>{
       if(data.ok)
       {
-        setMistakeIsDone(false);
         return router.push('/login')
       }
       setMistakeIsDone(true);
@@ -68,7 +67,7 @@ export default function LogIn() {
         <Navbar />
       </div>
       {goToChart ? 
-      <ChartStep validateForm={validateForm} mistakeIsDone={mistakeIsDone} /> :
+      <ChartStep setGoToChart={setGoToChart} validateForm={validateForm} mistakeIsDone={mistakeIsDone} /> :
             <FormStep
             companyName={companyName}
             setCompanyName={setCompanyName}

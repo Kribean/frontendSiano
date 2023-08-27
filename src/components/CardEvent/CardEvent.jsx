@@ -45,7 +45,7 @@ export default function CardEvent(props) {
         </h3>
         <p> <span className="card-title">Entreprise:</span> {props.companyName}</p>
         <p><span className="card-title">Catégorie:</span> {props.categoryText}</p>
-        <p><span className="card-title">Durée de l'évènement (en heure):</span> 2 h</p>
+        <p><span className="card-title">Durée de l'événement (en heure):</span> 2 h</p>
         <p><span className="card-title">Prix:</span> {props.price} euro</p>
         <p className="break-all text-neutral">
        <span className="card-title">Lieu:</span> {props.place}</p>

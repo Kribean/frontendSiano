@@ -52,13 +52,13 @@ export default function Event() {
       <div className="form-control">
           <label className="label cursor-pointer">
 <div className="flex flex-row jsutify-end m-[20px]">
-<span className="label-text font-bold mx-[10px]">{isActual?"Evènements du jour":"Tous les évènements"}</span>
+<span className="label-text font-bold mx-[10px]">{isActual?"Evènements du jour":"Tous les événements"}</span>
             <input type="checkbox" className="toggle" onChange={getOnlyEventofToday} checked={isActual} />
 </div>
           </label>
         </div>
       <div className=" flex flex-wrap gap-4 min-h-screen bg-base-200 text-neutral m-[20px]">
-      {dataCalendarModified?.length==0? <p className="text-neutral">Il n'y a pas encore d'évènements 🙂</p> :<div className="flex flex-wrap gap-2 w-full">
+      {dataCalendarModified?.length==0? <p className="text-neutral">Il n'y a pas encore d'événements 🙂</p> :<div className="flex flex-wrap gap-2 w-full">
         {dataCalendarModified?.map((element,index)=> <CardEvent key={index} 
         companyName={element.companyName}
         title= {element.title}

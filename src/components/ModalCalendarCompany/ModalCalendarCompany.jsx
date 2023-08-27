@@ -81,23 +81,23 @@ createEvent(body,JSON.parse(info).token)
                 <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
           <div className="modal-box">
           <div className="flex flex-col w-full">
-        <h2>Créer évènement</h2>
+        <h2>Créer événement</h2>
       </div>
       <div className="form-control">
           <label className="label">
-            <span className="label-text">Quand a lieu l'évènement? - <span className="text-bold">Tous les champs doivent être remplis</span></span>
+            <span className="label-text">Quand a lieu l'événement? - <span className="text-bold">Tous les champs doivent être remplis</span></span>
           </label>
           <DatePicker className="input input-bordered" dateFormat="dd/MM/yyyy" locale="fr" selected={startAt} onChange={(date) => {setStartAt(date)}} />
         </div>
       <div className="form-control">
           <label className="label">
-            <span className="label-text">Durée de l'évènement (en heure)</span>
+            <span className="label-text">Durée de l'événement (en heure)</span>
           </label>
-          <input type="number" maxLength={3} value={duration} onChange={(event)=>{setDuration(event.target.value)}} placeholder="Durée de l'évènement" className="input input-bordered" />
+          <input type="number" maxLength={3} value={duration} onChange={(event)=>{setDuration(event.target.value)}} placeholder="Durée de l'événement" className="input input-bordered" />
         </div>
         <div className="form-control">
           <label className="label">
-            <span className="label-text">Où à lieu l'évènement? (ne mettez pas d'accent ou de virgule)</span>
+            <span className="label-text">Où à lieu l'événement? (ne mettez pas d'accent ou de virgule)</span>
           </label>
           <input type="text" value={place} onChange={handlePlaceChange} placeholder="titre" className="input input-bordered" />
         </div>

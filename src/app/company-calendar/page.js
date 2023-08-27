@@ -49,11 +49,11 @@ export default function CompanyCalendar() {
       <h1 className="text-5xl font-bold">Evènements de mon entreprise</h1>
       <div className="flex flex-col w-full">
         <div className="flex flex-row m-[20px]">
-      <button onClick={()=>handleOpenModal()} className="btn btn-primary">Créer un  évènement +</button>
+      <button onClick={()=>handleOpenModal()} className="btn btn-primary">Créer un  événement +</button>
     </div>
       </div>
-      <h2 className="card-title">Liste de mes évènements</h2>
-     {dataCalendar?.length==0? <p className="text-neutral">Vous n'avez pas encore d'évènements programmés</p> :<div className="flex flex-wrap gap-2 w-full">
+      <h2 className="card-title">Liste de mes événements</h2>
+     {dataCalendar?.length==0? <p className="text-neutral">Vous n'avez pas encore d'événements programmés</p> :<div className="flex flex-wrap gap-2 w-full">
         {dataCalendar?.map((element,index)=> <CardEvent key={index} 
         companyName={element.companyName}
         idEvent={element._id}

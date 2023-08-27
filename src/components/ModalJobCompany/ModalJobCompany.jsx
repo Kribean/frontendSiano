@@ -83,7 +83,7 @@ createJob(body,JSON.parse(info).token)
       </div>
         <div className="form-control">
           <label className="label">
-            <span className="label-text">Où à lieu l'évènement? (ne mettez pas d'accent ou de virgule)</span>
+            <span className="label-text">Où à lieu l'événement? (ne mettez pas d'accent ou de virgule)</span>
           </label>
           <input type="text" value={place} onChange={handlePlaceChange} placeholder="Lieu de travail" className="input input-bordered" />
         </div>

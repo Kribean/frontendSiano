@@ -40,11 +40,11 @@ const [informationSiano,setInformationSiano]=useState()
 <div className="flex flex-row">
 <div className="badge badge-accent h-[42px] text-center text-white m-[10px] text-[24px] badge-lg">+</div>
             <h2 className="card-title text-primary-content">
-             Mes évènements
+             Mes événements
             </h2>
 </div>
             <p className="text-primary-content">
-              Visualiser ou créer des évènements que vous ferez pour le grand public. Foire, webinar,rencontre entreprise/client,etc... dites tout dans cette section
+              Visualiser ou créer des événements que vous ferez pour le grand public. Foire, webinar,rencontre entreprise/client,etc... dites tout dans cette section
             </p>
           </Link>
         </div>

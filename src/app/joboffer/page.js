@@ -40,7 +40,7 @@ export default function JobOffer() {
           </label>
         </div>
       <div className=" flex flex-wrap gap-4 min-h-screen bg-base-200 text-neutral m-[20px]">
-      {dataJob?.length==0? <p className="text-neutral">Il n'y a pas encore d'évènements 🙂</p> :<div className="flex flex-wrap gap-2 w-full">
+      {dataJob?.length==0? <p className="text-neutral">Il n'y a pas encore d'événements 🙂</p> :<div className="flex flex-wrap gap-2 w-full">
         {dataJob?.map((element,index)=> <CardJob key={index} 
         companyName={element.companyName}
         idJob={element._id}

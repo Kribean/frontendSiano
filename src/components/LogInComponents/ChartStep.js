@@ -61,7 +61,7 @@ export default function ChartStep(props) {
             d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
           />
         </svg>
-        <span>Oops! une erreur c'est produite, nous en sommes désolé. Si l'erreur persiste, contactez nous sur nos réseaux sociaux ou via notre email: caraibe.simulation@gmail.com</span>
+        <span>Oops ! Une erreur s'est produite. Nous nous excusons pour ce désagrément. Veuillez vérifier que vous n'avez pas déjà créé un compte avec la même adresse e-mail ou le même numéro de SIREN. Si l'erreur persiste, n'hésitez pas à nous contacter via nos réseaux sociaux ou par e-mail à caraibe.simulation@gmail.com</span>
       </div>}
       <div className="flex flex-row justify-end m-[20px]">
         <div className="form-control">

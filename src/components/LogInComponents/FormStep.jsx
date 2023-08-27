@@ -2,7 +2,7 @@
 import { useState } from "react";
 
 export default function FormStep(props) {
-  const [showAlert,setShowAlert] = useState(true);
+  const [showAlert,setShowAlert] = useState(false);
   const [textAlert,setTextAlert] = useState([]);
   const dataTheme = [
     {

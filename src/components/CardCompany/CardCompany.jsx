@@ -24,7 +24,7 @@ export default function CardCompany({company}) {
         <h3 className="card-title truncate">
             Produit:
         </h3>
-        {company.listOfProduct.map((element,index)=>{return <div key={index} className="badge badge-neutral">{element}</div>})}
+        {company.listOfProduct.map((element,index)=>{return <div key={index} className="badge badge-neutral">{element.name}</div>})}
        <p className="truncate break-all text-ellipsis overflow-hidde">Description: {company.description}</p>
        <p  className="text-neutral" >Adresse: {company.adress}</p>
                   <p  className="text-neutral" >Téléphone: {company.phoneNumber}</p>

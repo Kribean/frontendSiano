@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Consumer() {
   return (
@@ -13,6 +14,7 @@ export default function Consumer() {
       </div>
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row">
+          <Link href={"https://play.google.com/store/apps/details?id=com.kayak.siano"} target="_blank">
           <Image
             src="/Google-Play-Logo.png"
             alt="logo google play"
@@ -21,12 +23,22 @@ export default function Consumer() {
             height={400}
             priority
           />
+          </Link>
           <div>
-            <h1 className="text-xl lg:text-5xl font-bold">ça arrive!</h1>
+            
+            <h1 className="text-xl lg:text-5xl font-bold">
+              ça y'est!</h1>
             <p className="py-6">
-              Bientôt notre application sera disponible sur android
+              Découvrez toutes les entreprises locales du territoire en cliquant ici! 
+            </p>
+            <Link className="btn btn-info" href={"https://play.google.com/store/apps/details?id=com.kayak.siano"} target="_blank">
+              Télécharger Application Siano 
+            </Link>
+            <p className="text-md font-bold">
+              Note: notre application est pour l'instant disponible que pour <span className=" text-warning">Android</span> 
             </p>
           </div>
+          
         </div>
       </div>
       <Footer />

@@ -9,7 +9,7 @@ export default function Footer (){
   </div> 
             <div className="flex flex-row">
         <div>
-          <p>Siano<br/>Lyannaj ek aksyon pou pèp la karaib ek Gwiyan</p>
+          <p>Siano<br/>Lyannaj ek aksyon pou pèp la karaib ek Gwiyann</p>
         </div> 
         <div>
           <span className="footer-title">Social</span> 

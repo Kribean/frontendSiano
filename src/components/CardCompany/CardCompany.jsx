@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function CardCompany({company}) {
   return (
-    <div className="card w-full lg:w-96 bg-base-100 shadow-xl">
+    <div className="card h-fit w-full lg:w-96 bg-base-100 shadow-xl">
       <figure className="w-full h-[100px] relative">
         <Image
           src="/caribean-tribe.png"
@@ -20,15 +20,16 @@ export default function CardCompany({company}) {
           <h2 className="text-white text-2xl font-bold">{company.companyName}</h2>
         </div>
       </figure>
-      <div className="card-body ">
+      <div className="card-body h-fit ">
         <h3 className="card-title truncate">
             Produit:
         </h3>
+        <div className="badge h-fit badge-info"><span className="font-bold m-2">Secteur: </span> {company?.thematicCompany} </div>
         {company.listOfProduct.map((element,index)=>{return <div key={index} className="badge badge-neutral">{element.name}</div>})}
-       <p className="truncate break-all text-ellipsis overflow-hidde">Description: {company.description}</p>
-       <p  className="text-neutral" >Adresse: {company.adress}</p>
-                  <p  className="text-neutral" >Téléphone: {company.phoneNumber}</p>
-                  <p  className="text-neutral" >Mail: {company.email}</p>
+       <p className="text-neutral break-words "><span className="font-bold">Description:</span> {company.description}</p>
+       <p  className="text-neutral" ><span className="font-bold">Adresse:</span> {company.adress}</p>
+                  <p  className="text-neutral" ><span className="font-bold">Téléphone:</span> {company.phoneNumber}</p>
+                  <p  className="text-neutral" ><span className="font-bold">Mail:</span> {company.email}</p>
         <div className="card-actions justify-end">
         </div>
       </div>

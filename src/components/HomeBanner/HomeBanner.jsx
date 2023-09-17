@@ -13,7 +13,7 @@ export default function HomeBaner()
       alt="illustration siano" />
     <div>
       <h1 className="text-neutral text-xl lg:text-5xl font-bold">Bienvenue sur Siano!</h1>
-      <p className="text-neutral  py-6">Siano est une plateforme innovante dédiée à la croissance des entreprises locales et à l'épanouissement économique des Antilles. En mobilisant activement la population antillaise, nous encourageons la croissance des entreprises locales, créant ainsi de nouvelles opportunités d'emploi et contribuant au développement économique de notre région.</p>
+      <p className="text-neutral  py-6">Siano est l'annuaire professionnel, innovant dédié à la croissance des entreprises locales et à l'épanouissement économique des Antilles Guyane. En mobilisant activement la population antillaise/guyannaise, nous encourageons la croissance des entreprises locales, créant ainsi de nouvelles opportunités d'emploi et contribuant au développement économique de notre région.</p>
       <Link href="/logorsign" className="btn btn-primary m-2">Entreprise</Link>
       <Link href="/consumer" className="btn btn-primary m-2">Client</Link>
     </div>

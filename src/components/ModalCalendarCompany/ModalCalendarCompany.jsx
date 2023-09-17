@@ -35,7 +35,7 @@ const handlePlaceChange = (event) => {
   }
 };
 
-const allowedCharactersNi = /^[A-Za-z0-9\s.,!?'"()&@$%#*-]*$/;
+const allowedCharactersNi = /^[A-Za-zÀ-ÖØ-öø-ÿ0-9\s.,!?'"()&@$%#*-]*$/;
 const handleDescriptionOrTitleChange = (event,funcSet) => {
   const userInput = event.target.value;
 
@@ -97,9 +97,9 @@ createEvent(body,JSON.parse(info).token)
         </div>
         <div className="form-control">
           <label className="label">
-            <span className="label-text">Où à lieu l'événement? (ne mettez pas d'accent ou de virgule)</span>
+            <span className="label-text">Où a lieu l'événement? (ne mettez pas d'accent ou de virgule)</span>
           </label>
-          <input type="text" value={place} onChange={handlePlaceChange} placeholder="titre" className="input input-bordered" />
+          <input type="text" value={place} onChange={handlePlaceChange} placeholder="lieu" className="input input-bordered" />
         </div>
       <div className="form-control">
           <label className="label">
@@ -109,7 +109,7 @@ createEvent(body,JSON.parse(info).token)
         </div>
         <div className="form-control">
           <label className="label">
-            <span className="label-text">Description (ne mettez pas de caractères spéciaux)</span>
+            <span className="label-text">Description (ne mettez pas de caractères spéciaux - pas plus de 255 caractères!)</span>
           </label>
           <textarea type="text" value={description} onChange={(event)=>{handleDescriptionOrTitleChange(event,setDescription)}} rows={3} maxLength={255} placeholder="description" className="input input-bordered" />
         </div>

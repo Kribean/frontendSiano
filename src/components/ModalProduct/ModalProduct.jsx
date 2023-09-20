@@ -57,7 +57,7 @@ export default function ModalProduct(props) {
               <span className="label-text">Description</span>
             </label>
             <textarea
-              maxLength={"150"}
+              maxLength={"240"}
               rows="4"
               value={props.description}
               onChange={(event)=>{props.setDescription(event.target.value)}}

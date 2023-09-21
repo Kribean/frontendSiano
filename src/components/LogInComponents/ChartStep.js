@@ -170,7 +170,7 @@ export default function ChartStep(props) {
           </h2>
           <p>
             Antrepriz mwen pa ka fè lapròmòsyon oben pa asosye épi aktivité ki
-            ni an lyannaj épi: seksyalité, dwòg, vyolans, rasism, oben
+            ni an lyannaj épi: seksyalité, dwòg, lyannaj ek CBD, vyolans, rasism, oben
             deteryorasyon kilti antiyen/Giyanné.
           </p>
           <ButtonStep

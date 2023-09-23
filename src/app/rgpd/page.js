@@ -40,7 +40,7 @@ En tant que plateforme respectueuse des droits des utilisateurs et des entrepris
   </li>
   <li className="text-neutral">
     <p className="text-neutral">Contact et exercice des droits :</p>
-    <p className="text-neutral">Pour toute demande relative à la protection des données ou pour exercer vos droits en vertu du RGPD, vous pouvez contacter l'équipe de Siano via l'adresse e-mail : caraibe.simulation@gmail.com. Nous nous engageons à répondre à vos demandes dans les délais prévus par la réglementation en matière de protection des données.</p>
+    <p className="text-neutral">Pour toute demande relative à la protection des données ou pour exercer vos droits en vertu du RGPD, vous pouvez contacter l'équipe de Siano via l'adresse e-mail : sianoproject@gmail.com. Nous nous engageons à répondre à vos demandes dans les délais prévus par la réglementation en matière de protection des données.</p>
   </li>
 </ol>
 <p className="text-neutral">

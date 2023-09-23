@@ -66,7 +66,7 @@ export default function FeedbackCompany() {
                 <button className="btn">Interraction avec la communauté</button>
               </div>
             </div>
-           {!informationSiano?.globalRSEScore.mean ?<p className="text-neutral">😞 Votre entreprise n'a pas encore de note sur cette section. Pour rendre votre entreprise plus visible, nous vous encourageons à entreprendre des actions telles que la création de vidéos de votre entreprise, l'organisation de rencontres et de visites avec vos clients et visiteurs, ainsi que des initiatives visant à dynamiser le territoire. Si vous accomplissez ces actions, le système Siano vous offrira une visibilité accrue en faisant la publicité de votre entreprise gratuitement. N'oubliez pas de nous envoyer toutes vos actions entreprises par e-mail à caraibe.simulation@gmail.com ou de nous contacter pour plus d'informations. 🎥💼🌍</p>
+           {!informationSiano?.globalRSEScore.mean ?<p className="text-neutral">😞 Votre entreprise n'a pas encore de note sur cette section. Pour rendre votre entreprise plus visible, nous vous encourageons à entreprendre des actions telles que la création de vidéos de votre entreprise, l'organisation de rencontres et de visites avec vos clients et visiteurs, ainsi que des initiatives visant à dynamiser le territoire. Si vous accomplissez ces actions, le système Siano vous offrira une visibilité accrue en faisant la publicité de votre entreprise gratuitement. N'oubliez pas de nous envoyer toutes vos actions entreprises par e-mail à sianoproject@gmail.com ou de nous contacter pour plus d'informations. 🎥💼🌍</p>
            : <div className="stat-value">{informationSiano?.globalRSEScore.mean}/5</div>}
           </div>
         </div>
